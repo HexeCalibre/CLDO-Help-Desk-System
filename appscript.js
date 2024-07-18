@@ -57,7 +57,13 @@ function addAnswer(e) {
   }
 
   // Append a new row to the "Requirements" sheet with the collected data
-  requirementSheet.appendRow([date, time, code, customerEmail, area, requirement, responsible, responsibleEmail]);
+  requirementSheet.appendRow([date, time, code, customerEmail, area, requirement, responsible, responsibleEmail, "Open"]);
+
+  var subject = "Help Desk System Requirement No. " + code
+  var messageCustomer = "Hello. Thank you for your requirement. We are processing it, and you will hear from us soon. The number of your requirement for future reference is " + code + ".\n Regards. \n Practical Sheets Team"
+  var messageResponsible = "Hello. You've been assigned the Help Desk System case No. " + code + " by the user " + customerEmail + ". \n The requirement is " + requirement
+  GmailApp.sendEmail(customerEmail,subject,messageCustomer)
+  GmailApp.sendEmail(responsibleEmail,subject,messageResponsible)
 }
 
 // Function to ensure the form and sheet permissions are correct
