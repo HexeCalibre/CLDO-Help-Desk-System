@@ -1,3 +1,5 @@
+const SHEETS_ID = "1yahcS09T17Vhf6nPux0hm7pljOE74sQfFtzCg5UQfVQ"
+
 // Function to add an answer to the Google Sheets document
 function addAnswer(e) {
   // Get the form response
@@ -20,18 +22,8 @@ function addAnswer(e) {
   // Get the response to the second question (requirement)
   var requirement = questionResponses[1].getResponse();
 
-  // Log the email and timestamp to the console
-  console.log("email: " + customerEmail);
-  console.log("timestamp: " + timestamp);
-
-  // Log the area and requirement to the Logger
-  Logger.log("area: " + area);
-  Logger.log("requirement: " + requirement);
-  Logger.log("date: " + date);
-  Logger.log("time: " + time);
-
   // Open the Google Sheets document by its ID
-  var ws = SpreadsheetApp.openById("1yahcS09T17Vhf6nPux0hm7pljOE74sQfFtzCg5UQfVQ");
+  var ws = SpreadsheetApp.openById(SHEETS_ID);
 
   // Get the specific sheet named "Requirements"
   var requirementSheet = ws.getSheetByName("Requirements");
@@ -71,7 +63,7 @@ function addAnswer(e) {
 // Function to ensure the form and sheet permissions are correct
 function permissions() {
   // Open the Google Sheets document by its ID
-  var ws = SpreadsheetApp.openById("1yahcS09T17Vhf6nPux0hm7pljOE74sQfFtzCg5UQfVQ");
+  var ws = SpreadsheetApp.openById(SHEETS_ID);
 
   // Get the active form
   FormApp.getActiveForm();
