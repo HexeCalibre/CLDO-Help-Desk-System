@@ -60,8 +60,8 @@ function addAnswer(e) {
   requirementSheet.appendRow([date, time, code, customerEmail, area, requirement, responsible, responsibleEmail, "Open"]);
 
   var subject = "Help Desk System Requirement No. " + code
-  var messageCustomer = "Hello. Thank you for your requirement. We are processing it, and you will hear from us soon. The number of your requirement for future reference is " + code + ".\n Regards. \n Practical Sheets Team"
-  var messageResponsible = "Hello. You've been assigned the Help Desk System case No. " + code + " by the user " + customerEmail + ". \n The requirement is " + requirement
+  var messageCustomer = "Hello. Thank you for your requirement. We are processing it, and you will hear from us soon. Your ticket number is " + code + ".\nRegards. \nPractical Sheets Team"
+  var messageResponsible = "Hello. You've been assigned the Help Desk System case No. " + code + " by the user " + customerEmail + ". \nThe requirement is " + requirement
   GmailApp.sendEmail(customerEmail,subject,messageCustomer)
   GmailApp.sendEmail(responsibleEmail,subject,messageResponsible)
 }
