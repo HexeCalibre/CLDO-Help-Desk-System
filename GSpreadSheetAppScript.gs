@@ -1,10 +1,10 @@
 // Column indices for specific fields in the sheet
 const COL_REQUIREMENT = 3;
 const COL_USER_EMAIL = 4;
-const COL_STATUS = 9;
-const COL_PROCESSING = 11;
-const COL_CLOSED = 12;
-const COL_CANCELLED = 13;
+const COL_STATUS = 10;
+const COL_PROCESSING = 12;
+const COL_CLOSED = 13;
+const COL_CANCELLED = 14;
 
 // Function to check Gmail aliases (for permissions)
 function permissions(){
